@@ -26,11 +26,12 @@ public struct QueueArray<T>: Queue {
         return array.isEmpty
     }
 
+    @discardableResult
     public mutating func enqueue(_ element: T) -> Bool {
         array.append(element)
         return true
     }
-       
+    @discardableResult
     public mutating func dequeue() -> T? {
         return isEmpty ? nil : array.removeFirst()
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040C3EB7238D719F00E8A377 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C3EB6238D719F00E8A377 /* Node.swift */; };
+		040C3EB9238D735C00E8A377 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C3EB8238D735C00E8A377 /* LinkedList.swift */; };
 		04429D19238C298500B5146D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04429D18238C298500B5146D /* AppDelegate.swift */; };
 		04429D1B238C298500B5146D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04429D1A238C298500B5146D /* SceneDelegate.swift */; };
 		04429D1D238C298500B5146D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04429D1C238C298500B5146D /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040C3EB6238D719F00E8A377 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		040C3EB8238D735C00E8A377 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		04429D15238C298500B5146D /* DataStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04429D18238C298500B5146D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04429D1A238C298500B5146D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				04429D18238C298500B5146D /* AppDelegate.swift */,
 				04429D1A238C298500B5146D /* SceneDelegate.swift */,
 				04429D1C238C298500B5146D /* ViewController.swift */,
+				040C3EB6238D719F00E8A377 /* Node.swift */,
+				040C3EB8238D735C00E8A377 /* LinkedList.swift */,
 				04429D2C238C299C00B5146D /* Queues.swift */,
 				04429D2E238C2A2000B5146D /* Trees.swift */,
 				04429D1E238C298500B5146D /* Main.storyboard */,
@@ -147,8 +153,10 @@
 				04429D1D238C298500B5146D /* ViewController.swift in Sources */,
 				04429D19238C298500B5146D /* AppDelegate.swift in Sources */,
 				04429D1B238C298500B5146D /* SceneDelegate.swift in Sources */,
+				040C3EB7238D719F00E8A377 /* Node.swift in Sources */,
 				04429D2F238C2A2000B5146D /* Trees.swift in Sources */,
 				04429D2D238C299C00B5146D /* Queues.swift in Sources */,
+				040C3EB9238D735C00E8A377 /* LinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
