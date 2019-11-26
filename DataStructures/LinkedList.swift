@@ -109,9 +109,6 @@ extension LinkedList {
         tail = prev
         return current.value
     }
-    
-}
-extension LinkedList {
     @discardableResult
     public mutating func remove(after node: Node<Value>) -> Value? {
         defer {
@@ -121,5 +118,48 @@ extension LinkedList {
         }
         node.next = node.next?.next
         return node.next?.value
+    }
+}
+extension LinkedList: Collection {
+    public func index(after i: LinkedList<Value>.Index) -> LinkedList<Value>.Index {
+        return Index(node: i.node?.next)
+    }
+//    public subscript(position: LinkedList<Value>.Index) -> Slice<LinkedList<Value>> {
+//        _read {
+//            return position.node!.value
+//        }
+//    }
+    public subscript(position: LinkedList<Value>.Index) -> Value{
+        return position.node!.value
+    }
+    public var startIndex: LinkedList<Value>.Index {
+            return Index(node: head)
+    }
+    public var endIndex: LinkedList<Value>.Index {
+        return Index(node: tail?.next)
+    }    
+    public struct Index: Comparable {
+        
+            public var node: Node<Value>?
+        
+            static public func == (lhs: LinkedList<Value>.Index, rhs: LinkedList<Value>.Index) -> Bool {
+                switch (lhs.node, rhs.node) {
+                case let (left?, right?):
+                    return left.next === right.next
+                case (nil, nil):
+                    return true
+                default:
+                   return false
+            }
+        }
+       static  public func <(lhs: LinkedList<Value>.Index, rhs: LinkedList<Value>.Index) -> Bool {
+            guard lhs != rhs else {
+                return false
+            }
+            let nodes = sequence(first: lhs.node) { $0?.next }
+            return nodes.contains{ $0 === rhs.node }
+        }
+        
+        
     }
 }
