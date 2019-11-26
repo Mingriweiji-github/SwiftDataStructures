@@ -74,4 +74,40 @@ extension LinkedList {
             node.next = Node(value: value, next: node.next)
             return node.next!
     }
+    
+    ///pop: 删除链表第一个元素
+    @discardableResult
+    public mutating func pop() -> Value? {
+        defer {
+            head = head?.next
+            if isEmpty {
+                tail = nil
+            }
+        }
+        return head?.value
+    }
+    ///removeLast: 删除链表最后一个元素
+    @discardableResult
+    public mutating func removeLast() -> Value? {
+        ///1.非空链表判断
+        guard let head = head  else {
+            return nil
+        }
+        //2.判断元素个数是否唯一
+        guard head.next == nil else {
+            return pop()
+        }
+        ///3、遍历 直到最后一个元素 current.next = nil
+        var prev = head
+        var current = head
+        while current.next != nil {
+            prev = current
+            current = current.next!
+        }
+        ///4、既然current是最后一个元素，可以使用prev.next 来断开引用？最后更新尾部节点
+        prev.next = nil
+        tail = prev
+        return current.value
+    }
+    
 }

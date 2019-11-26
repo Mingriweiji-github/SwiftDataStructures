@@ -14,7 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        nodeTest()
-        linkedListTest()
+//        linkedListTest()
+        linkedListTestRemove()
 //        queueTest()
     }
     func nodeTest() {
@@ -31,12 +32,19 @@ class ViewController: UIViewController {
         list.push(2)
         list.push(3)
         print("before---\(list)")
-        
-        let index = list.node(at: 1)!
-        for _ in 1...3 {
-            list.insert(0, after: index)
-        }
-        print("after===\(list)")
+        let popedValue = list.pop()
+        print("poped value:" + String(describing: popedValue))
+        print("after pop list:\(list)")
+    }
+    func linkedListTestRemove() {
+        var list = LinkedList<Int>()
+        list.push(1)
+        list.push(2)
+        list.push(3)
+        print("v before remove last: \(list)")
+        let removeLastValue = list.removeLast()
+        print("removed value: \(String(describing: removeLastValue))")
+        print("v after remove last:\(list)")
     }
     func queueTest() {
         var queue = QueueArray<String>()
