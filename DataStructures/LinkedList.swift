@@ -111,3 +111,15 @@ extension LinkedList {
     }
     
 }
+extension LinkedList {
+    @discardableResult
+    public mutating func remove(after node: Node<Value>) -> Value? {
+        defer {
+            if node.next == nil {
+                self.tail = node
+            }
+        }
+        node.next = node.next?.next
+        return node.next?.value
+    }
+}
