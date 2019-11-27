@@ -109,6 +109,7 @@ extension LinkedList {
         tail = prev
         return current.value
     }
+    ///remove(after:)删除链表中某个节点的后一个节点
     @discardableResult
     public mutating func remove(after node: Node<Value>) -> Value? {
         defer {
@@ -159,7 +160,21 @@ extension LinkedList: Collection {
             let nodes = sequence(first: lhs.node) { $0?.next }
             return nodes.contains{ $0 === rhs.node }
         }
-        
-        
+    }
+}
+
+extension LinkedList {
+    private mutating func copyNodes() {
+        guard var oldNode = head else {
+            return
+        }
+        head = Node(value: oldNode.value)
+        var newHead = head
+        while let nextOldNode = oldNode.next {
+            newHead?.next = Node(value: nextOldNode.value)
+            newHead = newHead?.next
+            oldNode = nextOldNode
+        }
+        tail = newHead
     }
 }
